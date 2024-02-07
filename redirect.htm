@@ -1,6 +1,15 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
-"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-      <script type="text/JavaScript">
-      setTimeout("location.href = https://rough-pond-1677.on.fleek.co",0);
-</script>
+export default {
+  async fetch(request, env, ctx) {
+    // Define the target URL
+    const targetUrl = "https://rough-pond-1677.on.fleek.co";
+    
+    // Define the delay time in milliseconds (e.g., 3000 milliseconds = 3 seconds)
+    const delayMilliseconds = 3000;
+
+    // Wait for the delay
+    await new Promise(resolve => setTimeout(resolve, delayMilliseconds));
+
+    // Redirect the user with a 301 status code
+    return Response.redirect(targetUrl, 301);
+  },
+};
